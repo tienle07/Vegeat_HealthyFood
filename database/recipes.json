@@ -1,0 +1,175 @@
+[{
+  "_id": {
+    "$oid": "6474985729cc8e809226eccc"
+  },
+  "title": "Bánh kem phô mai",
+  "ingredients": [
+    {
+      "$oid": "64748e6138b2e488770f2f98"
+    },
+    {
+      "$oid": "64748e6138b2e488770f2f99"
+    }
+  ],
+  "steps": [
+    "Bước 1: bỏ trứng vào rỗ",
+    "Bước 2: lấy ra"
+  ],
+  "time": 60,
+  "nutrition": {
+    "protein": 20,
+    "carbs": 40,
+    "calories": 500,
+    "fat": 10
+  },
+  "__v": 0,
+  "premium": "false",
+  "image": "https://i.ibb.co/CKXybgW/background5-3x.png"
+},{
+  "_id": {
+    "$oid": "64749c876d63eee6b4baa598"
+  },
+  "title": "Bánh Flan",
+  "ingredients": [
+    {
+      "$oid": "64748e6138b2e488770f2f98"
+    },
+    {
+      "$oid": "64748e6138b2e488770f2f99"
+    }
+  ],
+  "steps": [
+    "Bước 1: bỏ trứng vào rỗ",
+    "Bước 2:lấy ra"
+  ],
+  "time": 60,
+  "nutrition": {
+    "protein": 20,
+    "carbs": 40,
+    "calories": 400,
+    "fat": 10
+  },
+  "__v": 0,
+  "premium": "false",
+  "image": "https://i.ibb.co/LrJc8Gm/background6-3x.png"
+},{
+  "_id": {
+    "$oid": "6483ec3a0388006d10ef25d7"
+  },
+  "title": "Bánh Socola",
+  "ingredients": [
+    {
+      "$oid": "64748e6138b2e488770f2f98"
+    }
+  ],
+  "steps": [
+    "Bước 1: bỏ trứng vào rỗ",
+    "Bước 2:lấy ra"
+  ],
+  "time": 60,
+  "nutrition": {
+    "protein": 20,
+    "carbs": 40,
+    "calories": 500,
+    "fat": 10
+  },
+  "__v": 0,
+  "premium": "false",
+  "image": "https://i.ibb.co/t4C3V0g/background7-3x.png"
+},{
+  "_id": {
+    "$oid": "6483ec880388006d10ef25e1"
+  },
+  "title": "Bánh Socola 2",
+  "ingredients": [
+    {
+      "$oid": "64748e6138b2e488770f2f98"
+    }
+  ],
+  "steps": [
+    "Bước 1: bỏ trứng vào rỗ",
+    "Bước 2:lấy ra"
+  ],
+  "time": 60,
+  "nutrition": {
+    "protein": 20,
+    "carbs": 40,
+    "calories": 500,
+    "fat": 10
+  },
+  "__v": 0,
+  "premium": "false",
+  "image": "https://i.ibb.co/6bwLxP2/background8-3x.png"
+},{
+  "_id": {
+    "$oid": "6483ec8b0388006d10ef25e3"
+  },
+  "title": "Bánh Socola 3",
+  "ingredients": [
+    {
+      "$oid": "64748e6138b2e488770f2f98"
+    }
+  ],
+  "steps": [
+    "Bước 1: bỏ trứng vào rỗ",
+    "Bước 2:lấy ra"
+  ],
+  "time": 60,
+  "nutrition": {
+    "protein": 20,
+    "carbs": 40,
+    "calories": 500,
+    "fat": 10
+  },
+  "__v": 0,
+  " premium": "false",
+  "image": "https://i.ibb.co/CKXybgW/background5-3x.png"
+},{
+  "_id": {
+    "$oid": "6483fc426f89c9a72f1df195"
+  },
+  "title": "Bánh Socola 4",
+  "ingredients": [
+    {
+      "$oid": "64748e6138b2e488770f2f98"
+    }
+  ],
+  "steps": [
+    "Bước 1: bỏ trứng vào rỗ",
+    "Bước 2:lấy ra"
+  ],
+  "time": 60,
+  "nutrition": {
+    "protein": 20,
+    "carbs": 40,
+    "calories": 500,
+    "fat": 10
+  },
+  "premium": false,
+  "__v": 0,
+  "image": "https://i.ibb.co/CKXybgW/background5-3x.png"
+},{
+  "_id": {
+    "$oid": "6483fc5f74c361a9f4abacab"
+  },
+  "title": "Bánh Socola 5",
+  "ingredients": [
+    {
+      "$oid": "64748e6138b2e488770f2f98"
+    }
+  ],
+  "steps": [
+    "Bước 1: bỏ trứng vào rỗ",
+    "Bước 2:lấy ra"
+  ],
+  "time": 60,
+  "nutrition": {
+    "protein": 20,
+    "carbs": 40,
+    "calories": 500,
+    "fat": 10
+  },
+  "premium": true,
+  "__v": 0,
+  "image": "https://i.ibb.co/CKXybgW/background5-3x.png"
+}]

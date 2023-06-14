@@ -1,0 +1,697 @@
+{
+	"info": {
+		"_postman_id": "98ea8068-2524-4d5c-9110-f39c1500a628",
+		"name": "Vegeat API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22177802"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"vovanhung2\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"admin2@gmail.com\",\r\n    \"phone\": \"0938283923\",\r\n    \"role\": \"isAdmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"123456\",\r\n    \"email\": \"vovanhung3@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ingredients",
+			"item": [
+				{
+					"name": "searchByName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NzQ4YzUzODlkYTA5NjEzMzhkNjAzNyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsInBob25lIjoiMDkzODI4MzkyMyIsInVzZXJuYW1lIjoidm92YW5odW5nMiIsInBhc3N3b3JkIjoiJDJiJDEwJDQ3NHZIZ0hNeUxjdmphcEJ2MkVTei45eml0eEFLVkRNVE5XaEVuaTQ4d212TjFKa1FGSGsyIiwicm9sZSI6ImlzQWRtaW4iLCJzdGF0dXMiOiJub2FjdGl2ZSIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsIl9fdiI6MH0sImlhdCI6MTY4NTM2MDE4MiwiZXhwIjoxNjk1MzYwMTgyfQ.f2CINhFEOy3-wl_R_a8AvrUYZcodxokPk-HQ3f2xK0A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3100/api/ingredients/search?query=Nguyên liệu B",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"ingredients",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Nguyên liệu B"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getIngredients",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NzQ4YzUzODlkYTA5NjEzMzhkNjAzNyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsInBob25lIjoiMDkzODI4MzkyMyIsInVzZXJuYW1lIjoidm92YW5odW5nMiIsInBhc3N3b3JkIjoiJDJiJDEwJDQ3NHZIZ0hNeUxjdmphcEJ2MkVTei45eml0eEFLVkRNVE5XaEVuaTQ4d212TjFKa1FGSGsyIiwicm9sZSI6ImlzQWRtaW4iLCJzdGF0dXMiOiJub2FjdGl2ZSIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsIl9fdiI6MH0sImlhdCI6MTY4NTM1OTcwNCwiZXhwIjoxNjk1MzU5NzA0fQ.aAGvddc0UOMXeub6pEozpSCnzsGrlJOKyTwXTsp9uXM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3100/api/ingredients/",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"ingredients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllIngredients",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NzQ4YzUzODlkYTA5NjEzMzhkNjAzNyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsInBob25lIjoiMDkzODI4MzkyMyIsInVzZXJuYW1lIjoidm92YW5odW5nMiIsInBhc3N3b3JkIjoiJDJiJDEwJDQ3NHZIZ0hNeUxjdmphcEJ2MkVTei45eml0eEFLVkRNVE5XaEVuaTQ4d212TjFKa1FGSGsyIiwicm9sZSI6ImlzQWRtaW4iLCJzdGF0dXMiOiJub2FjdGl2ZSIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsIl9fdiI6MH0sImlhdCI6MTY4NTM1OTcwNCwiZXhwIjoxNjk1MzU5NzA0fQ.aAGvddc0UOMXeub6pEozpSCnzsGrlJOKyTwXTsp9uXM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3100/api/ingredients/getAllIngredient/",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"ingredients",
+								"getAllIngredient",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createIngredients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NDkxZjQ5OTAzNjI0ZmEwOGYwMGRjNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGhvbmUiOiIwOTM4MjgzOTIzIiwidXNlcm5hbWUiOiJ2b3Zhbmh1bmciLCJwYXNzd29yZCI6IiQyYiQxMCRIQWF0aGduUXkzTFprWDJjNHRKWGN1SjU1cXpocGh0cHlJLk5FZnNSTWRGdnBjbGE5ZHNpTyIsInJvbGUiOiJpc0FkbWluIiwic3RhdHVzIjoiYWN0aXZlZCIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsIl9fdiI6MH0sImlhdCI6MTY4NTM1OTUyMSwiZXhwIjoxNjk1MzU5NTIxfQ.ZrYelaMMvBhOX0iVEbh-9u-6RNyJAvhNTcHRe0dLJkE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NDkxZjQ5OTAzNjI0ZmEwOGYwMGRjNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGhvbmUiOiIwOTM4MjgzOTIzIiwidXNlcm5hbWUiOiJ2b3Zhbmh1bmciLCJwYXNzd29yZCI6IiQyYiQxMCRIQWF0aGduUXkzTFprWDJjNHRKWGN1SjU1cXpocGh0cHlJLk5FZnNSTWRGdnBjbGE5ZHNpTyIsInJvbGUiOiJpc0FkbWluIiwic3RhdHVzIjoiYWN0aXZlZCIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsIl9fdiI6MH0sImlhdCI6MTY4NTM1OTUyMSwiZXhwIjoxNjk1MzU5NTIxfQ.ZrYelaMMvBhOX0iVEbh-9u-6RNyJAvhNTcHRe0dLJkE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"name\": \"Nguyên liệu A\",\r\n    \"image\": \"http://example.com/ingredientA.jpg\"\r\n  },\r\n  {\r\n    \"name\": \"Nguyên liệu B\",\r\n    \"image\": \"http://example.com/ingredientB.jpg\"\r\n  },\r\n  {\r\n    \"name\": \"Nguyên liệu C\",\r\n    \"image\": \"http://example.com/ingredientC.jpg\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/ingredients/bulk",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"ingredients",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectIngredients",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NDkxZjQ5OTAzNjI0ZmEwOGYwMGRjNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGhvbmUiOiIwOTM4MjgzOTIzIiwidXNlcm5hbWUiOiJ2b3Zhbmh1bmciLCJwYXNzd29yZCI6IiQyYiQxMCRIQWF0aGduUXkzTFprWDJjNHRKWGN1SjU1cXpocGh0cHlJLk5FZnNSTWRGdnBjbGE5ZHNpTyIsInJvbGUiOiJpc0FkbWluIiwic3RhdHVzIjoiYWN0aXZlZCIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsIl9fdiI6MH0sImlhdCI6MTY4NTM1OTUyMSwiZXhwIjoxNjk1MzU5NTIxfQ.ZrYelaMMvBhOX0iVEbh-9u-6RNyJAvhNTcHRe0dLJkE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  \"64748c5389da0961338d6037\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/ingredients/select",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"ingredients",
+								"select"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeIngredients",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NDkxZjQ5OTAzNjI0ZmEwOGYwMGRjNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGhvbmUiOiIwOTM4MjgzOTIzIiwidXNlcm5hbWUiOiJ2b3Zhbmh1bmciLCJwYXNzd29yZCI6IiQyYiQxMCRIQWF0aGduUXkzTFprWDJjNHRKWGN1SjU1cXpocGh0cHlJLk5FZnNSTWRGdnBjbGE5ZHNpTyIsInJvbGUiOiJpc0FkbWluIiwic3RhdHVzIjoiYWN0aXZlZCIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsIl9fdiI6MH0sImlhdCI6MTY4NTM1OTUyMSwiZXhwIjoxNjk1MzU5NTIxfQ.ZrYelaMMvBhOX0iVEbh-9u-6RNyJAvhNTcHRe0dLJkE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userIngredients\": [\"64748e6138b2e488770f2f98\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/ingredients/remove",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"ingredients",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "recipes",
+			"item": [
+				{
+					"name": "searchByIngredients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NzQ4YzUzODlkYTA5NjEzMzhkNjAzNyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsInBob25lIjoiMDkzODI4MzkyMyIsInVzZXJuYW1lIjoidm92YW5odW5nMiIsInBhc3N3b3JkIjoiJDJiJDEwJDQ3NHZIZ0hNeUxjdmphcEJ2MkVTei45eml0eEFLVkRNVE5XaEVuaTQ4d212TjFKa1FGSGsyIiwicm9sZSI6ImlzQWRtaW4iLCJzdGF0dXMiOiJub2FjdGl2ZSIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsIl9fdiI6MH0sImlhdCI6MTY4NTM2MDE4MiwiZXhwIjoxNjk1MzYwMTgyfQ.f2CINhFEOy3-wl_R_a8AvrUYZcodxokPk-HQ3f2xK0A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3100/api/recipes/searchByIngredients?ingredients=64748e6138b2e488770f2f98",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"recipes",
+								"searchByIngredients"
+							],
+							"query": [
+								{
+									"key": "ingredients",
+									"value": "64748e6138b2e488770f2f98"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchByRecipe",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NzQ4YzUzODlkYTA5NjEzMzhkNjAzNyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsInBob25lIjoiMDkzODI4MzkyMyIsInVzZXJuYW1lIjoidm92YW5odW5nMiIsInBhc3N3b3JkIjoiJDJiJDEwJDQ3NHZIZ0hNeUxjdmphcEJ2MkVTei45eml0eEFLVkRNVE5XaEVuaTQ4d212TjFKa1FGSGsyIiwicm9sZSI6ImlzQWRtaW4iLCJzdGF0dXMiOiJub2FjdGl2ZSIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsIl9fdiI6MH0sImlhdCI6MTY4NTM2MDE4MiwiZXhwIjoxNjk1MzYwMTgyfQ.f2CINhFEOy3-wl_R_a8AvrUYZcodxokPk-HQ3f2xK0A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3100/api/recipes/searchByRecipes?ingredients=64748e6138b2e488770f2f98&title=Bánh kem",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"recipes",
+								"searchByRecipes"
+							],
+							"query": [
+								{
+									"key": "ingredients",
+									"value": "64748e6138b2e488770f2f98"
+								},
+								{
+									"key": "title",
+									"value": "Bánh kem"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createRecipes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NDkxZjQ5OTAzNjI0ZmEwOGYwMGRjNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGhvbmUiOiIwOTM4MjgzOTIzIiwidXNlcm5hbWUiOiJ2b3Zhbmh1bmciLCJwYXNzd29yZCI6IiQyYiQxMCRIQWF0aGduUXkzTFprWDJjNHRKWGN1SjU1cXpocGh0cHlJLk5FZnNSTWRGdnBjbGE5ZHNpTyIsInJvbGUiOiJpc0FkbWluIiwic3RhdHVzIjoiYWN0aXZlZCIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsIl9fdiI6MH0sImlhdCI6MTY4NTM1OTUyMSwiZXhwIjoxNjk1MzU5NTIxfQ.ZrYelaMMvBhOX0iVEbh-9u-6RNyJAvhNTcHRe0dLJkE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Bánh Socola 5\",\r\n  \"ingredients\": [\"64748e6138b2e488770f2f98\"],\r\n  \"steps\": [\"Bước 1: bỏ trứng vào rỗ\", \"Bước 2:lấy ra\"],\r\n  \"time\": 60,\r\n  \"nutrition\": {\r\n    \"protein\": 20,\r\n    \"carbs\": 40,\r\n    \"calories\": 500,\r\n    \"fat\": 10\r\n  },\r\n  \"premium\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/recipes/bulk",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"recipes",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchByIdRecipes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NDkxZjQ5OTAzNjI0ZmEwOGYwMGRjNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGhvbmUiOiIwOTM4MjgzOTIzIiwidXNlcm5hbWUiOiJ2b3Zhbmh1bmciLCJwYXNzd29yZCI6IiQyYiQxMCRIQWF0aGduUXkzTFprWDJjNHRKWGN1SjU1cXpocGh0cHlJLk5FZnNSTWRGdnBjbGE5ZHNpTyIsInJvbGUiOiJpc0FkbWluIiwic3RhdHVzIjoiYWN0aXZlZCIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsIl9fdiI6MH0sImlhdCI6MTY4NTM1OTUyMSwiZXhwIjoxNjk1MzU5NTIxfQ.ZrYelaMMvBhOX0iVEbh-9u-6RNyJAvhNTcHRe0dLJkE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  \"64748c5389da0961338d6037\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/recipes/6474985729cc8e809226eccc",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"recipes",
+								"6474985729cc8e809226eccc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "getAllUser",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NzQ4YzUzODlkYTA5NjEzMzhkNjAzNyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsInBob25lIjoiMDkzODI4MzkyMyIsInVzZXJuYW1lIjoidm92YW5odW5nMiIsInBhc3N3b3JkIjoiJDJiJDEwJDQ3NHZIZ0hNeUxjdmphcEJ2MkVTei45eml0eEFLVkRNVE5XaEVuaTQ4d212TjFKa1FGSGsyIiwicm9sZSI6ImlzQWRtaW4iLCJzdGF0dXMiOiJub2FjdGl2ZSIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsIl9fdiI6MH0sImlhdCI6MTY4NTM2MDE4MiwiZXhwIjoxNjk1MzYwMTgyfQ.f2CINhFEOy3-wl_R_a8AvrUYZcodxokPk-HQ3f2xK0A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3100/api/user/search",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"user",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MzU3NjQ1OTE4Njg4ZTdkNmI2MGU1MyIsImlhdCI6MTY4MTIyNTI5OSwiZXhwIjoxNjgxMzExNjk5fQ.nEoIB1isSt6uw3fRzMg01siJ4mK2Lu8mnXeuX4m3MZE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3100/api/user/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MzU3NjQ1OTE4Njg4ZTdkNmI2MGU1MyIsImlhdCI6MTY4MTIyNTI5OSwiZXhwIjoxNjgxMzExNjk5fQ.nEoIB1isSt6uw3fRzMg01siJ4mK2Lu8mnXeuX4m3MZE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"vovanhung3@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"username\": \"vovanhung1\",\r\n    \"phone\": \"12345678910\",\r\n    \"admin:\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NzQ4YzUzODlkYTA5NjEzMzhkNjAzNyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsInBob25lIjoiMDkzODI4MzkyMyIsInVzZXJuYW1lIjoidm92YW5odW5nMiIsInBhc3N3b3JkIjoiJDJiJDEwJDQ3NHZIZ0hNeUxjdmphcEJ2MkVTei45eml0eEFLVkRNVE5XaEVuaTQ4d212TjFKa1FGSGsyIiwicm9sZSI6ImlzQWRtaW4iLCJzdGF0dXMiOiJub2FjdGl2ZSIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsIl9fdiI6MH0sImlhdCI6MTY4NTM2MDE4MiwiZXhwIjoxNjk1MzYwMTgyfQ.f2CINhFEOy3-wl_R_a8AvrUYZcodxokPk-HQ3f2xK0A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3100/api/user/6434f78daf9df7c25aa34a0b",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"user",
+								"6434f78daf9df7c25aa34a0b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NzQ4YzUzODlkYTA5NjEzMzhkNjAzNyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsInBob25lIjoiMDkzODI4MzkyMyIsInVzZXJuYW1lIjoidm92YW5odW5nMiIsInBhc3N3b3JkIjoiJDJiJDEwJDQ3NHZIZ0hNeUxjdmphcEJ2MkVTei45eml0eEFLVkRNVE5XaEVuaTQ4d212TjFKa1FGSGsyIiwicm9sZSI6ImlzQWRtaW4iLCJzdGF0dXMiOiJub2FjdGl2ZSIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsIl9fdiI6MH0sImlhdCI6MTY4NTM2MDE4MiwiZXhwIjoxNjk1MzYwMTgyfQ.f2CINhFEOy3-wl_R_a8AvrUYZcodxokPk-HQ3f2xK0A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": \"admin\",\r\n    \"phone\": \"01827281892121\",\r\n    \"username\": \"vovanhung\",\r\n    \"password\": \"123456\",\r\n    \"status\": \"noactive\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/user/64357645918688e7d6b60e53",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"user",
+								"64357645918688e7d6b60e53"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "payment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NDkxZjQ5OTAzNjI0ZmEwOGYwMGRjNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGhvbmUiOiIwOTM4MjgzOTIzIiwidXNlcm5hbWUiOiJ2b3Zhbmh1bmciLCJwYXNzd29yZCI6IiQyYiQxMCRIQWF0aGduUXkzTFprWDJjNHRKWGN1SjU1cXpocGh0cHlJLk5FZnNSTWRGdnBjbGE5ZHNpTyIsInJvbGUiOiJpc0FkbWluIiwic3RhdHVzIjoiYWN0aXZlZCIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDQtMjZUMTI6NTU6MzcuOTc4WiIsIl9fdiI6MH0sImlhdCI6MTY4NTM1OTUyMSwiZXhwIjoxNjk1MzU5NTIxfQ.ZrYelaMMvBhOX0iVEbh-9u-6RNyJAvhNTcHRe0dLJkE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"price\": \"100\",\r\n  \"description\": \"Product description\",\r\n  \"return_url\": \"http://your-website.com/success\",\r\n  \"cancel_url\": \"http://your-website.com/cancel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/payment/pay",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"payment",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excutepayment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0NzQ4YzUzODlkYTA5NjEzMzhkNjAzNyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsInBob25lIjoiMDkzODI4MzkyMyIsInVzZXJuYW1lIjoidm92YW5odW5nMiIsInBhc3N3b3JkIjoiJDJiJDEwJDQ3NHZIZ0hNeUxjdmphcEJ2MkVTei45eml0eEFLVkRNVE5XaEVuaTQ4d212TjFKa1FGSGsyIiwicm9sZSI6ImlzQWRtaW4iLCJzdGF0dXMiOiJub2FjdGl2ZSIsImltYWdlIjoiaHR0cHM6Ly96b3MuYWxpcGF5b2JqZWN0cy5jb20vcm1zcG9ydGFsL09EVExjanhBZnZxYnhIblZYQ1lYLnBuZyIsImNyZWF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDUtMjlUMTE6Mjg6MTkuMzcwWiIsIl9fdiI6MH0sImlhdCI6MTY4NTM2MDE4MiwiZXhwIjoxNjk1MzYwMTgyfQ.f2CINhFEOy3-wl_R_a8AvrUYZcodxokPk-HQ3f2xK0A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3100/api/payment/executePayment",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"payment",
+								"executePayment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "upload image",
+			"item": [
+				{
+					"name": "upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3100/api/uploadFile",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"uploadFile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

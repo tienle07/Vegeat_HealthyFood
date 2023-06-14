@@ -1,0 +1,53 @@
+[{
+  "_id": {
+    "$oid": "64748e6138b2e488770f2f98"
+  },
+  "name": "Nguyên liệu A",
+  "image": "http://example.com/ingredientA.jpg",
+  "users": [
+    {
+      "$oid": "64748c5389da0961338d6037"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64748e6138b2e488770f2f99"
+  },
+  "name": "Nguyên liệu B",
+  "image": "http://example.com/ingredientB.jpg",
+  "users": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64748e6138b2e488770f2f9a"
+  },
+  "name": "Nguyên liệu C",
+  "image": "http://example.com/ingredientC.jpg",
+  "users": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6483db28449d7c10cf845b7c"
+  },
+  "name": "Nguyên liệu A",
+  "image": "http://example.com/ingredientA.jpg",
+  "users": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6483db28449d7c10cf845b7d"
+  },
+  "name": "Nguyên liệu B",
+  "image": "http://example.com/ingredientB.jpg",
+  "users": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6483db28449d7c10cf845b7e"
+  },
+  "name": "Nguyên liệu C",
+  "image": "http://example.com/ingredientC.jpg",
+  "users": [],
+  "__v": 0
+}]
