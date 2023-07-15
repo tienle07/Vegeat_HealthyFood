@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Image, Pressable, FlatList, ScrollView } from "react-native";
+import { Animated, StyleSheet, View, Text, Image, Pressable } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { Color, Border, FontFamily, FontSize, Padding } from "../GlobalStyles";
 import { useNavigation } from '@react-navigation/native';
@@ -8,6 +8,9 @@ import configUrl from '../config';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Home = () => {
+    const [isOpenDoor, setIsOpenDoor] = useState(false);
+    const fridge = useState(new Animated.Value(0))[0];
+    const fridgeDoor = useState(new Animated.Value(0))[0];
     const navigation = useNavigation();
     const [username, setUsername] = useState('');
     const [ingredients, setIngredients] = useState([]);
@@ -56,6 +59,46 @@ const Home = () => {
 
     }, []);
 
+    const openFridge = () => {
+        Animated.timing(fridge, {
+            toValue: -70,
+            duration: 1000,
+            useNativeDriver: true
+        }).start();
+
+        Animated.timing(fridgeDoor, {
+            toValue: 180,
+            duration: 1000,
+            useNativeDriver: true
+        }).start();
+
+        setTimeout(() => {
+            setIsOpenDoor(true);
+        }, 470);
+    }
+
+    const closeFridge = () => {
+        Animated.timing(fridge, {
+            toValue: 0,
+            duration: 1000,
+            useNativeDriver: true
+        }).start();
+
+        Animated.timing(fridgeDoor, {
+            toValue: 0,
+            duration: 1000,
+            useNativeDriver: true
+        }).start();
+
+        setTimeout(() => {
+            setIsOpenDoor(false);
+        }, 470);
+    }
+
+    const handleDrawerPress = (order: number) => {
+        console.log(order);
+    }
+
     const renderIngredient = ({ item }) => (
         <View>
             <Text>{item.name}</Text>
@@ -96,7 +139,7 @@ const Home = () => {
                     <View style={[styles.view, styles.viewPosition]} />
                 </View>
             </View>
-            <Image
+            {/* <Image
                 style={styles.homeV1Item}
                 resizeMode="cover"
                 source={require("../assets/ellipse-12.png")}
@@ -124,7 +167,89 @@ const Home = () => {
                 style={[styles.groupIcon1, styles.groupIconPosition]}
                 resizeMode="cover"
                 source={require("../assets/group1.png")}
-            />
+            /> */}
+            <View style={styles.container}>
+                <Animated.View style={[
+                    styles.fridgeFrame,
+                    {
+                        transform: [{ translateX: fridge }],
+                    }
+                ]}>
+                    <Image
+                        style={styles.fridge}
+                        source={require('./assets/images/fridge_back.png')}
+                    />
+                    {/* Place food inside fridge here */}
+                    <View style={styles.freezerLeft}>
+                    </View>
+                    <View style={styles.freezerRight}>
+                    </View>
+                    <View style={styles.fridgeCompartment1}>
+                    </View>
+                    <View style={styles.fridgeCompartment2}>
+                    </View>
+                    <View style={styles.fridgeCompartment3}>
+                    </View>
+                    <View style={styles.fridgeCompartment4}>
+                    </View>
+                    <Image
+                        style={styles.fridgeFront}
+                        source={require('./assets/images/fridge_front.png')}
+                    />
+                    <Animated.View
+                        style={[
+                            styles.fridgeDoorFrame,
+                            {
+                                transform: [
+                                    {
+                                        rotateY: fridgeDoor.interpolate({
+                                            inputRange: [0, 180],
+                                            outputRange: ['0deg', '180deg']
+                                        })
+                                    }
+                                ]
+                            }
+                        ]}>
+                        <Image style={[
+                            styles.fridgeDoor,
+                            {
+                                opacity: isOpenDoor ? 0 : 1
+                            }
+                        ]}
+                            source={require('./assets/images/fridge_door.png')}
+                        />
+                        <Image
+                            style={[
+                                styles.fridgeDoorOpen,
+                                {
+                                    opacity: isOpenDoor ? 1 : 0
+                                }
+                            ]}
+                            source={require('./assets/images/fridge_door_open.png')}
+                        />
+                        {/* Place food in fridge door here */}
+                        <Image
+                            style={[
+                                styles.frideDoorOpen_,
+                                {
+                                    opacity: isOpenDoor ? 1 : 0
+                                }
+                            ]}
+                            source={require('./assets/images/fridge_door_open_.png')}
+                        />
+                        <Pressable
+                            style={{ top: 160, left: 36, width: 48, height: 50, position: 'absolute' }}
+                            onPress={isOpenDoor ? closeFridge : openFridge}
+                        />
+                    </Animated.View>
+                    <Pressable pointerEvents={isOpenDoor ? 'auto' : 'none'} style={styles.freezerLeft} onPress={() => isOpenDoor && handleDrawerPress(0)} />
+                    <Pressable pointerEvents={isOpenDoor ? 'auto' : 'none'} style={styles.freezerRight} onPress={() => isOpenDoor && handleDrawerPress(1)} />
+                    <Pressable pointerEvents={isOpenDoor ? 'auto' : 'none'} style={styles.fridgeCompartment1} onPress={() => isOpenDoor && handleDrawerPress(2)} />
+                    <Pressable pointerEvents={isOpenDoor ? 'auto' : 'none'} style={styles.fridgeCompartment2} onPress={() => isOpenDoor && handleDrawerPress(3)} />
+                    <Pressable pointerEvents={isOpenDoor ? 'auto' : 'none'} style={styles.fridgeCompartment3} onPress={() => isOpenDoor && handleDrawerPress(4)} />
+                    <Pressable pointerEvents={isOpenDoor ? 'auto' : 'none'} style={styles.fridgeCompartment4} onPress={() => isOpenDoor && handleDrawerPress(5)} />
+                </Animated.View>
+            </View >
             <View style={styles.groupParent}>
                 <View style={[styles.rectangleParent, styles.wrapperPosition]}>
                     <View style={[styles.groupChild, styles.wrapperPosition]} />
@@ -153,6 +278,97 @@ const Home = () => {
 };
 
 const styles = StyleSheet.create({
+    freezerLeft: {
+        top: 30,
+        left: 98,
+        width: 88,
+        height: 64,
+        position: "absolute",
+    },
+    freezerRight: {
+        top: 51,
+        left: 191,
+        width: 58,
+        height: 43,
+        position: "absolute",
+    },
+    fridgeCompartment1: {
+        top: 102,
+        left: 90,
+        width: 168,
+        height: 60,
+        position: "absolute",
+    },
+    fridgeCompartment2: {
+        top: 167,
+        left: 90,
+        width: 168,
+        height: 60,
+        position: "absolute",
+    },
+    fridgeCompartment3: {
+        bottom: 116,
+        left: 90,
+        width: 168,
+        height: 60,
+        position: "absolute",
+    },
+    fridgeCompartment4: {
+        bottom: 50,
+        left: 90,
+        width: 168,
+        height: 60,
+        position: "absolute",
+    },
+    container: {
+        top: "20%",
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 400,
+        width: "400%",
+        position: 'absolute',
+    },
+    fridgeFrame: {
+        height: 406,
+        alignItems: 'center',
+    },
+    fridge: {
+        width: 343,
+        height: 406,
+    },
+    fridgeFront: {
+        top: 32,
+        left: 84,
+        width: 181,
+        height: 329,
+        position: 'absolute',
+    },
+    fridgeDoorFrame: {
+        left: 57,
+        bottom: 20,
+        width: 237 * 1.85,
+        height: 390,
+        position: 'absolute',
+    },
+    fridgeDoor: {
+        width: 237,
+    },
+    fridgeDoorOpen: {
+        top: 18,
+        left: 75,
+        width: 139,
+        height: 359,
+        transform: [{ rotateY: '180deg' }],
+        position: 'absolute',
+    },
+    frideDoorOpen_: {
+        top: 52,
+        left: 87,
+        width: 141,
+        height: 314,
+        transform: [{ rotateY: '180deg' }],
+        position: 'absolute',
+    },
     headerPosition: {
         width: "100%",
         position: "absolute",
@@ -207,7 +423,7 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     tmPosition: {
-        top: 13,
+        top: 10,
         fontSize: FontSize.size_base,
     },
     tmClr: {
@@ -487,6 +703,7 @@ const styles = StyleSheet.create({
         },
     },
     wrapper: {
+        borderRadius: Border.br_81xl,
         left: 228,
         width: 88,
     },

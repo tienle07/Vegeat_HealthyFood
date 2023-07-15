@@ -107,8 +107,6 @@ export default function App() {
               component={Statist}
               options={{ headerShown: false }}
             />
-
-
           </Stack.Navigator>
         ) : null}
       </NavigationContainer>
