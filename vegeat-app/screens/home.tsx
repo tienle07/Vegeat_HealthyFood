@@ -177,7 +177,7 @@ const Home = () => {
                 ]}>
                     <Image
                         style={styles.fridge}
-                        source={require('./assets/images/fridge_back.png')}
+                        source={require('../assets/images/fridge_back.png')}
                     />
                     {/* Place food inside fridge here */}
                     <View style={styles.freezerLeft}>
@@ -194,7 +194,7 @@ const Home = () => {
                     </View>
                     <Image
                         style={styles.fridgeFront}
-                        source={require('./assets/images/fridge_front.png')}
+                        source={require('../assets/images/fridge_front.png')}
                     />
                     <Animated.View
                         style={[
@@ -216,7 +216,7 @@ const Home = () => {
                                 opacity: isOpenDoor ? 0 : 1
                             }
                         ]}
-                            source={require('./assets/images/fridge_door.png')}
+                            source={require('../assets/images/fridge_door.png')}
                         />
                         <Image
                             style={[
@@ -225,7 +225,7 @@ const Home = () => {
                                     opacity: isOpenDoor ? 1 : 0
                                 }
                             ]}
-                            source={require('./assets/images/fridge_door_open.png')}
+                            source={require('../assets/images/fridge_door_open.png')}
                         />
                         {/* Place food in fridge door here */}
                         <Image
@@ -235,7 +235,7 @@ const Home = () => {
                                     opacity: isOpenDoor ? 1 : 0
                                 }
                             ]}
-                            source={require('./assets/images/fridge_door_open_.png')}
+                            source={require('../assets/images/fridge_door_open_.png')}
                         />
                         <Pressable
                             style={{ top: 160, left: 36, width: 48, height: 50, position: 'absolute' }}
