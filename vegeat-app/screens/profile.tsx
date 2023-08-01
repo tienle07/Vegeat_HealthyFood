@@ -46,30 +46,9 @@ const Profile = () => {
                 useAngle={true}
                 angle={169.71}
             />
-            <View style={[styles.swipeUp, styles.swipeUpPosition]}>
-                <View style={[styles.btnhome, styles.swipeUpPosition]}>
-                    <Image
-                        style={[styles.backgroundIcon, styles.swipeUpPosition]}
-                        resizeMode="cover"
-                        source={require("../assets/background.png")}
-                    />
-                    <View style={styles.view} />
-                </View>
-            </View>
-            <Image
-                style={[styles.bottomMenusIcon, styles.pagebackgroundLayout]}
-                resizeMode="cover"
-                source={require("../assets/bottom-menus1.png")}
-            />
-            <View style={[styles.activemenu, styles.activemenuLayout]}>
-                <View style={[styles.background, styles.activemenuLayout]} />
-            </View>
-            <Image
-                style={styles.homeV1Child}
-                resizeMode="cover"
-                source={require("../assets/ellipse-13.png")}
-            />
-            <Text style={styles.tiKhon}>Tài khoản</Text>
+           
+            
+           
             <Image
                 style={[styles.homeV1Item, styles.thngPosition]}
                 resizeMode="cover"

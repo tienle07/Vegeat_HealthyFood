@@ -114,17 +114,7 @@ const ListRecipe = () => {
         }
     };
 
-    const handlePress = () => {
-        navigation.navigate('Profile');
-    };
-
-    const handlePress2 = () => {
-        navigation.navigate('Blog');
-    };
-
-    const handlePress3 = () => {
-        navigation.navigate('TodayRecipe');
-    };
+    
 
     const renderRecipeItem = ({ item }) => (
         <View style={{ flex: 0.5, justifyContent: 'center', alignItems: 'center' }}>
@@ -204,45 +194,7 @@ const ListRecipe = () => {
                     <View style={styles.view} />
                 </View>
             </View>
-            <View style={[styles.bottomMenus, styles.bottomMenusLayout]}>
-                <View style={[styles.background13, styles.bottomMenusLayout]} />
-
-                <Pressable onPress={handlePress} style={[styles.notificationIcon, styles.iconLayout]}
-                >
-                    <Image
-                        resizeMode="cover"
-                        source={require("../assets/notification1.png")}
-                    />
-                </Pressable>
-
-                <Pressable onPress={handlePress2} style={[styles.activityIcon, styles.iconLayout]}
-                >
-                    <Image
-                        resizeMode="cover"
-                        source={require("../assets/activity.png")}
-                    />
-                </Pressable>
-
-                <Pressable onPress={handlePress3} style={styles.wishlistIcon}
-                >
-                    <Image
-                        resizeMode="cover"
-                        source={require("../assets/vector-stroke.png")}
-                    />
-                </Pressable>
-
-                <View style={[styles.activemenu, styles.activemenuLayout]}>
-                    <View style={[styles.background14, styles.activemenuLayout]} />
-                    <View style={styles.icHomeParent}>
-                        <Image
-                            style={[styles.icHomeIcon, styles.borderPosition]}
-                            resizeMode="cover"
-                            source={require("../assets/ic-home.png")}
-                        />
-                        <Text style={[styles.cngThc, styles.timeTypo]}>Công thức</Text>
-                    </View>
-                </View>
-            </View>
+            
             <Text style={[styles.nguynLiu, styles.ktQuTypo]} onPress={() => navigation.navigate("Home")}>Nguyên liệu</Text>
             <Image
                 style={styles.titleIcon}
